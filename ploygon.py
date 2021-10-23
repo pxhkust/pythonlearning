@@ -3,9 +3,9 @@ from typing import List
 
 
 class Ploygon(object):
-    def __init__(self, ponits: List[Point], name: str = ""):
-        self.points = ponits
-        self.name = name
+    def __init__(self, points: List[Point], name_: str = ""):
+        self.points = self.__sort_by_x_and_y(points)
+        self.name = name_
 
     def __repr__(self):
         return "Ploygon {0.name}: {0.points}".format(self)
@@ -25,5 +25,6 @@ class Ploygon(object):
         return Point(center_x/len(self),
                      center_y/len(self))
 
-    def sort_by_x_and_y(self) -> List[Point]:
-        pass
+    @staticmethod
+    def __sort_by_x_and_y(points: List[Point]) -> List[Point]:
+        return sorted(points, key=lambda p: [p.x, p.y])
