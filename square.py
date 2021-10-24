@@ -1,5 +1,6 @@
 from point import Point
 from ploygon import Ploygon
+from lane_segment import LaneSegment
 from typing import List
 import math
 
@@ -10,9 +11,8 @@ class Square(Ploygon):
 
     @property
     def side(self) -> float:
-        side_distance = (self.points[0].x - self.center.x) ** 2 + \
-                        (self.points[0].y - self.center.y) ** 2
-        return math.sqrt(2 * side_distance)
+        line_segment = LaneSegment(self.points[0], self.center)
+        return math.sqrt(2) * line_segment.length
 
     @property
     def perimeter(self) -> float:
