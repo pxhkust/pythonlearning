@@ -10,8 +10,6 @@ def main():
     point_C = Point(x=0, y=2, name="C")
     point_D = Point(x=-1, y=1, name="D")
     square_ABCD = Square([point_A, point_B, point_C, point_D], "ABCD")
-    print(square_ABCD)
-    print(square_ABCD.side)
 
 
 if __name__ == '__main__':

@@ -14,4 +14,11 @@ class Square(Ploygon):
                         (self.points[0].y - self.center.y) ** 2
         return math.sqrt(2 * side_distance)
 
+    @property
+    def perimeter(self) -> float:
+        return 4 * self.side
+
+    @property
+    def area(self) -> float:
+        return self.side ** 2
 
