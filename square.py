@@ -10,6 +10,8 @@ class Square(Ploygon):
 
     @property
     def side(self) -> float:
-        return math.sqrt((self.points[0].x - self.points[1].x) ** 2 +
-                         (self.points[0].y - self.points[1].y) ** 2)
+        side_distance = (self.points[0].x - self.center.x) ** 2 + \
+                        (self.points[0].y - self.center.y) ** 2
+        return math.sqrt(2 * side_distance)
+
 
