@@ -20,7 +20,7 @@ class LaneSegment(object):
         if self.begin.x == self.end.x:
             return math.inf
         else:
-            return (self.end.y - self.begin.y)/ (self.end.x - self.begin.x)
+            return (self.end.y - self.begin.y) / (self.end.x - self.begin.x)
 
     @property
     def middle_point(self) -> Point:

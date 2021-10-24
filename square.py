@@ -16,24 +16,25 @@ class Square(Ploygon):
     def __is_valid(self) -> bool:
         if len(self) != 4:
             return False
+
         sorted_points = self.sorted_by_x_and_y()
+
         line_1 = LaneSegment(sorted_points[0], sorted_points[1])
         line_2 = LaneSegment(sorted_points[1], sorted_points[3])
         line_3 = LaneSegment(sorted_points[3], sorted_points[2])
         line_4 = LaneSegment(sorted_points[2], sorted_points[0])
-        if line_1.length != line_2.length:
+        if 0 in [line_1.length, line_2.length, line_3.length, line_4.length]:
             return False
-        if line_2.length != line_3.length:
-            return False
-        if line_3.length != line_4.length:
-            return False
-        if line_4.length != line_1.length:
-            return False
+
         cross_line_1 = LaneSegment(sorted_points[0], sorted_points[3])
         cross_line_2 = LaneSegment(sorted_points[1], sorted_points[2])
         if cross_line_1.length != cross_line_2.length:
             return False
-        return True
+        if cross_line_1.slope == math.inf and cross_line_2.slope == 0:
+            return True
+        if cross_line_2.slope == math.inf and cross_line_1.slope == 0:
+            return True
+        return cross_line_1.slope * cross_line_2.slope != -1
 
     @property
     def side(self) -> float:

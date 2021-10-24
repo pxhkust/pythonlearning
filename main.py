@@ -5,10 +5,10 @@ from lane_segment import LaneSegment
 
 
 def main():
-    point_A = Point(1, 1, "A")
-    point_B = Point(0, 0, "B")
-    point_C = Point(0, 2, "C")
-    point_D = Point(-1, 1, "D")
+    point_A = Point(0, 0, "A")
+    point_B = Point(1, 1, "B")
+    point_C = Point(0, 0, "C")
+    point_D = Point(1, 1, "D")
     square = Square([point_A, point_B, point_C, point_D])
 
 
