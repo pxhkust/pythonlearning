@@ -9,7 +9,7 @@ def main():
     point_B = Point(0, 0, "B")
     point_C = Point(0, 2, "C")
     point_D = Point(-1, 1, "D")
-    square_ABCD = Square([point_A, point_B, point_C, point_D], "ABCD")
+    square = Square([point_A, point_B, point_C, point_D])
 
 
 if __name__ == '__main__':
