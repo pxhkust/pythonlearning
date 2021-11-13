@@ -1,7 +1,6 @@
 from diamond import Diamond
 from point import Point
 from rectangle import Rectangle
-from spatial_relationship import segment_vertical_to_segment
 from typing import List
 
 

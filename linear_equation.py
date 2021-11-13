@@ -1,5 +1,4 @@
 import math
-
 from point import Point
 
 
@@ -32,7 +31,6 @@ class LinearEquation(object):
 
     def distance_of_point(self, point: Point) -> float:
         return abs(self.A * point.x + self.B * point.y + self.C) / math.sqrt(self.A ** 2 + self.B ** 2)
-
 
     @property
     def slope(self):

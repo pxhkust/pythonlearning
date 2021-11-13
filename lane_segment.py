@@ -35,5 +35,3 @@ class LaneSegment(object):
 
     def point_to_distance(self, point: Point) -> float:
         return self.to_linear_equation().distance_of_point(point)
-
-

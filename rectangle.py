@@ -11,7 +11,3 @@ class Rectangle(Parallelogram):
 
     def __is_valid(self) -> bool:
         return segment_vertical_to_segment(self.line_1, self.line_2)
-
-    @property
-    def area(self) -> float:
-        return self.line_1.length * self.line_2.length

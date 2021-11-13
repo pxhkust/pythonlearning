@@ -1,5 +1,6 @@
 from point import Point
 from typing import List
+from scipy.spatial import ConvexHull
 
 
 class Ploygon(object):
@@ -15,6 +16,11 @@ class Ploygon(object):
 
     def __getitem__(self, item):
         return self.points[item]
+
+    @property
+    def convex_hull(self) -> List[Point]:
+        indexes: List[int] = ConvexHull([(point.x, point.y) for point in self.points]).vertices.tolist()
+        return [self.points[index] for index in indexes]
 
     @property
     def center(self) -> Point:

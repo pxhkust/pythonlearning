@@ -17,17 +17,9 @@ def segment_vertical_to_segment(line_1: LaneSegment, line_2: LaneSegment) -> boo
     return line_1.slope * line_2.slope == -1
 
 
-def segment_vertical_and_equal_to_segment(line_1: LaneSegment, line_2: LaneSegment) -> bool:
-    return line_1.length == line_2.length and segment_vertical_to_segment(line_1, line_2)
-
-
 def segment_parallel_to_segment(line_1: LaneSegment, line_2: LaneSegment) -> bool:
     return line_1.slope == line_2.slope
 
 
 def segment_parallel_and_equal_to_segment(line_1: LaneSegment, line_2: LaneSegment) -> bool:
     return line_1.length == line_2.length and segment_parallel_to_segment(line_1, line_2)
-
-
-
-
