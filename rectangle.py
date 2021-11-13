@@ -14,6 +14,8 @@ class Rectangle(Ploygon):
         self.line_2 = LaneSegment(sorted_points[1], sorted_points[3])
         self.line_3 = LaneSegment(sorted_points[3], sorted_points[2])
         self.line_4 = LaneSegment(sorted_points[2], sorted_points[0])
+        self.cross_line_1 = LaneSegment(sorted_points[0], sorted_points[3])
+        self.cross_line_2 = LaneSegment(sorted_points[1], sorted_points[2])
         assert self.__is_valid()
 
     def __is_valid(self) -> bool:
