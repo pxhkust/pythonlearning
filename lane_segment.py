@@ -4,6 +4,7 @@ import math
 
 class LaneSegment(object):
     def __init__(self, begin: Point, end: Point, name: str = ""):
+        assert begin.x != end.x or begin.y != end.y
         self.begin = begin
         self.end = end
         self.name = name
