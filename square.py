@@ -1,8 +1,7 @@
 from point import Point
 from rectangle import Rectangle
-from lane_segment import LaneSegment
+from spatial_relationship import segment_vertical_and_equal_to_segment
 from typing import List
-import math
 
 
 class Square(Rectangle):
@@ -14,18 +13,11 @@ class Square(Rectangle):
         return Point(self.center.x * 2 - point.x, self.center.y * 2 - point.y)
 
     def __is_valid(self) -> bool:
-        if self.cross_line_1.length != self.cross_line_2.length:
-            return False
-        if self.cross_line_1.slope == math.inf and self.cross_line_2.slope == 0:
-            return True
-        if self.cross_line_2.slope == math.inf and self.cross_line_1.slope == 0:
-            return True
-        return self.cross_line_1.slope * self.cross_line_2.slope == -1
+        return segment_vertical_and_equal_to_segment(self.cross_line_1, self.cross_line_2)
 
     @property
     def side(self) -> float:
-        line_segment = LaneSegment(self.points[0], self.center)
-        return math.sqrt(2) * line_segment.length
+        return self.length
 
     @property
     def perimeter(self) -> float:

@@ -1,8 +1,8 @@
 from point import Point
 from ploygon import Ploygon
 from lane_segment import LaneSegment
+from spatial_relationship import segment_vertical_to_segment
 from typing import List
-import math
 
 
 class Rectangle(Ploygon):
@@ -21,11 +21,7 @@ class Rectangle(Ploygon):
     def __is_valid(self) -> bool:
         if self.line_1.length != self.line_3.length or self.line_2.length != self.line_4.length:
             return False
-        if self.line_1.slope == math.inf and self.line_2.slope == 0:
-            return True
-        if self.line_2.slope == math.inf and self.line_1.slope == 0:
-            return True
-        return self.line_1.slope * self.line_2.slope == -1
+        return segment_vertical_to_segment(self.line_1, self.line_2)
 
 
     @property
