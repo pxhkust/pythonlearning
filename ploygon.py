@@ -30,6 +30,3 @@ class Ploygon(object):
             center_y += point.y
         return Point(center_x/len(self),
                      center_y/len(self))
-
-    def sorted_by_x_and_y(self) -> List[Point]:
-        return sorted(self.points, key=lambda point: [point.x, point.y])
