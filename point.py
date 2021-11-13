@@ -5,4 +5,4 @@ class Point(object):
         self.name = name
 
     def __repr__(self):
-        return "Point {0.name}: ({0.x:.4f}, {0.y:.4f})".format(self)
+        return "{0.__class__.__name__} {0.name}: ({0.x:.4f}, {0.y:.4f})".format(self)

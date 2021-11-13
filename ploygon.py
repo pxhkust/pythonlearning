@@ -8,7 +8,7 @@ class Ploygon(object):
         self.name = name
 
     def __repr__(self):
-        return "Ploygon {0.name}: {0.points}".format(self)
+        return "{0.__class__.__name__} {0.name}: {0.points}".format(self)
 
     def __len__(self):
         return len(self.points)
