@@ -7,7 +7,7 @@ from typing import List
 class Square(Rectangle):
     def __init__(self, points: List[Point], name: str = ""):
         super(Square, self).__init__(points, name)
-        assert(self.__is_valid())
+        assert self.__is_valid()
 
     def find_corner_point(self, point: Point) -> Point:
         return Point(self.center.x * 2 - point.x, self.center.y * 2 - point.y)
