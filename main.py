@@ -1,3 +1,4 @@
+from diamond import Diamond
 from ploygon import Ploygon
 from point import Point
 from square import Square
